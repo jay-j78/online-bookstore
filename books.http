@@ -1,0 +1,185 @@
+# Create a book (POST)
+# Get all books (GET)
+# Get a book by ID
+# Update a book (PUT)
+# Delete a book (DELETE)
+# Search by title or author
+# Validate book title, author, and price 
+
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Spring Boot for Beginners",
+  "author": "Jay",
+  "price": 499.00
+}
+
+### 
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "Test Author",
+  "price": 100
+}
+
+###
+
+GET http://localhost:8080/api/books/search?keyword=spring
+
+GET http://localhost:8080/api/books
+
+### Test book not found
+GET http://localhost:8080/api/books/99999
+###
+
+GET http://localhost:8080/api/books/search?keyword=Jay
+
+Content-Type: application/json
+
+{
+  "title": "Java Programming",
+  "author": "James Gosling",
+  "price": 499.00
+}
+
+
+###
+
+GET http://localhost:8080/api/books
+
+
+###
+PUT http://localhost:8080/api/books/1
+Content-Type: application/json
+
+{
+  "title": "Java Programming",
+  "author": "James Gosling",
+  "price": 599.00
+}
+###
+
+PUT http://localhost:8080/api/books/2
+Content-Type: application/json
+
+{
+  "title": "",
+  "author": "Jay",
+  "price": 499
+}
+###
+
+PUT http://localhost:8080/api/books/2
+Content-Type: application/json
+
+{
+  "title": "Spring Boot for Beginners - Updated",
+  "author": "Jay",
+  "price": 599
+}
+
+### Update a book that does not exist
+PUT http://localhost:8080/api/books/99999
+Content-Type: application/json
+
+{
+  "title": "Test Book",
+  "author": "Test Author",
+  "price": 299
+}
+
+###
+
+DELETE http://localhost:8080/api/books/5
+
+
+### Get the first 5 books
+GET http://localhost:8080/api/books?page=0&size=5
+
+### Get the next 5 books
+GET http://localhost:8080/api/books?page=1&size=5
+
+### Get 10 books per page
+GET http://localhost:8080/api/books?page=0&size=10
+
+
+### Test pagination
+GET http://localhost:8080/api/books?page=0&size=5&sort=price,asc
+
+
+### Test with one book per page
+GET http://localhost:8080/api/books?page=0&size=5&sort=price,asc
+
+
+### Test second page: one book per page
+GET http://localhost:8080/api/books?page=1&size=1
+
+
+
+### Cheapest books first
+GET http://localhost:8080/api/books?page=0&size=5&sortBy=price&direction=asc
+
+### Most expensive books first
+GET http://localhost:8080/api/books?page=0&size=5&sortBy=price&direction=desc
+
+###
+http://localhost:8080/api/books?page=0&size=5&sortBy=price&direction=asc
+ 
+###
+http://localhost:8080/api/books?page=0&size=5&sortBy=price&direction=desc
+
+
+### Add a new book
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+    "title": "Java Basics",
+    "author": "Rahul",
+    "price": 399
+}
+
+### Test validation - empty title
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+    "title": "",
+    "author": "Rahul",
+    "price": 399
+}
+###
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Java Collections",
+  "author": "Rahul",
+  "price": 450
+}
+
+###
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Java Collections - Updated",
+  "author": "Rahul",
+  "price": 475
+}
+
+###
+GET http://localhost:8080/api/books/search?keyword=Java
+###
+GET http://localhost:8080/api/books?page=0&size=5&sortBy=price&direction=asc
+
+###
+GET http://localhost:8080/api/books/8
+###
+http://localhost:8080
+
+###
+POST http://localhost:8080/api/cart/items

@@ -1,0 +1,139 @@
+.orders-page {
+  min-height: 100vh;
+  padding: 55px 22px;
+  background: #f8f6f1;
+  color: #1d2926;
+}
+
+.orders-header,
+.orders-list,
+.orders-empty,
+.orders-back-button,
+.orders-error,
+.orders-message {
+  width: min(100%, 850px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orders-header {
+  margin-bottom: 35px;
+}
+
+.orders-eyebrow,
+.order-label {
+  color: #64806d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+}
+
+.orders-header h1 {
+  margin: 12px 0;
+  font-size: 48px;
+}
+
+.orders-header > p,
+.orders-empty > p {
+  color: #777d77;
+  line-height: 1.7;
+}
+
+.orders-list {
+  display: grid;
+  gap: 20px;
+}
+
+.order-card,
+.orders-empty {
+  padding: 27px;
+  background: #fff;
+  border: 1px solid #e8e8df;
+  border-radius: 16px;
+}
+
+.order-card-top,
+.order-card-bottom,
+.order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.order-card-top {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ecece5;
+}
+
+.order-card-top h2 {
+  margin: 7px 0 0;
+}
+
+.order-status {
+  padding: 7px 12px;
+  border-radius: 30px;
+  background: #e8f3e8;
+  color: #28603b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.order-item {
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f0ea;
+}
+
+.order-item p {
+  color: #777d77;
+  font-size: 13px;
+}
+
+.order-card-bottom {
+  padding-top: 19px;
+}
+
+.orders-empty {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.orders-empty button,
+.orders-back-button {
+  padding: 13px 20px;
+  border: none;
+  border-radius: 9px;
+  background: #244c38;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.orders-back-button {
+  display: block;
+  width: fit-content;
+  margin-top: 28px;
+}
+
+.orders-error {
+  box-sizing: border-box;
+  padding: 15px;
+  background: #fff0f0;
+  color: #9a2929;
+  border-radius: 9px;
+}
+
+.orders-message {
+  color: #777d77;
+}
+
+@media (max-width: 600px) {
+  .orders-page {
+    padding: 35px 14px;
+  }
+
+  .order-card,
+  .orders-empty {
+    padding: 20px 16px;
+  }
+}
